@@ -24,4 +24,4 @@ release-major: test
 	git push origin master
 
 clean:
-	rm -Rf node_modules
+	rm -rf node_modules
