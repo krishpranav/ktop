@@ -1,37 +1,49 @@
-## Welcome to GitHub Pages
+# ktop
+A terminal based graphical activity monitor inspired by htop
 
-You can use the [editor on GitHub](https://github.com/krishpranav/ktop/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+How to install
+---
 
-### Markdown
+If you haven't already got Node.js, then [go get it](http://nodejs.org/).
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+git clone https://github.com/krishpranav/ktop
+cd ktop
+npm install
+node app.js
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+If you *really* like vtop, but your finger muscle memory means you keep typing 'top' then why not add an alias to ~/.bashrc.
 
-### Jekyll Themes
+```
+alias top="ktop"
+alias oldtop="/usr/bin/top"
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/krishpranav/ktop/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Keyboard shortcuts
+---
 
-### Support or Contact
+* Press 'u' to update to the latest version of vtop.
+* Arrow up or k to move up the process list.
+* Arrow down or j to move down.
+* Arrow left or h to zoom the graphs in.
+* Arrow right or l to zoom the graphs out.
+* g to go to the top of the process list.
+* G to move to the end of the list.
+* dd to kill all the processes in that group
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Mouse control
+---
+
+If your terminal supports mouse events (like iTerm) then
+you can click on the items in the process list. As well as
+use the scroll wheel. You can disable mouse control with
+the `ktop --no-mouse` option.
+
+Color Scheme
+```
+ktop --theme wizard
+ktop --theme acid
+```
