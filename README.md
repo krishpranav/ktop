@@ -14,8 +14,11 @@ cd ktop
 npm install
 node app.js
 ```
-
-If you *really* like vtop, but your finger muscle memory means you keep typing 'top' then why not add an alias to ~/.bashrc.
+or you can run
+```
+npm install ktop
+```
+If you *really* like ktop, but your finger muscle memory means you keep typing 'top' then why not add an alias to ~/.bashrc.
 
 ```
 alias top="ktop"
@@ -25,7 +28,7 @@ alias oldtop="/usr/bin/top"
 Keyboard shortcuts
 ---
 
-* Press 'u' to update to the latest version of vtop.
+* Press 'u' to update to the latest version of ktop.
 * Arrow up or k to move up the process list.
 * Arrow down or j to move down.
 * Arrow left or h to zoom the graphs in.
