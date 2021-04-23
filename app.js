@@ -23,9 +23,9 @@ const App = ((() => {
 
   // Set up the commander instance and add the required options
   cli
-    .option('-t, --theme  [name]', `set the ktop theme [${themes}]`, 'parallax')
+    .option('-t, --theme  [name]', `set the vtop theme [${themes}]`, 'parallax')
     .option('--no-mouse', 'Disables mouse interactivity')
-    .option('--quit-after [seconds]', 'Quits ktop after interval', '0')
+    .option('--quit-after [seconds]', 'Quits vtop after interval', '0')
     .option('--update-interval [milliseconds]', 'Interval between updates', '300')
     .version(VERSION)
     .parse(process.argv)
@@ -84,11 +84,11 @@ const App = ((() => {
     let headerTextNoTags
     if (upgradeNotice) {
       upgradeNotice = `${upgradeNotice}`
-      headerText = ` {bold}ktop{/bold}{white-fg} for ${os.hostname()} {red-bg} Press 'u' to upgrade to v${upgradeNotice} {/red-bg}{/white-fg}`
-      headerTextNoTags = ` ktop for ${os.hostname()}  Press 'u' to upgrade to v${upgradeNotice} `
+      headerText = ` {bold}vtop{/bold}{white-fg} for ${os.hostname()} {red-bg} Press 'u' to upgrade to v${upgradeNotice} {/red-bg}{/white-fg}`
+      headerTextNoTags = ` vtop for ${os.hostname()}  Press 'u' to upgrade to v${upgradeNotice} `
     } else {
-      headerText = ` {bold}ktop{/bold}{white-fg} for ${os.hostname()} `
-      headerTextNoTags = ` ktop for ${os.hostname()} `
+      headerText = ` {bold}vtop{/bold}{white-fg} for ${os.hostname()} `
+      headerTextNoTags = ` vtop for ${os.hostname()} `
     }
 
     const header = blessed.text({
@@ -118,7 +118,7 @@ const App = ((() => {
       left: Math.floor(program.cols / 2 - (28 / 2))
     })
     screen.append(header)
-    screen.append(data)
+    screen.append(date)
     screen.append(loadAverage)
 
     const zeroPad = input => (`0${input}`).slice(-2)
@@ -161,7 +161,7 @@ const App = ((() => {
       const command = commands[c]
       text += `  {white-bg}{black-fg}${c}{/black-fg}{/white-bg} ${command}`
     }
-    text += '{|}krishpranav.github.io'
+    text += '{|}http://parall.ax/vtop'
     const footerRight = blessed.box({
       width: '100%',
       top: program.rows - 1,
@@ -394,7 +394,7 @@ const App = ((() => {
         theme = cli.theme
       }
       /**
-       * Quits running ktop after so many seconds
+       * Quits running vtop after so many seconds
        * This is mainly for perf testing.
        */
       if (cli['quitAfter'] !== '0') {
@@ -487,7 +487,7 @@ const App = ((() => {
           program.normalBuffer()
 
           // @todo: show changelog  AND  smush existing data into it :D
-          upgrade.install('ktop', [
+          upgrade.install('vtop', [
             {
               'theme': theme
             }
@@ -636,7 +636,7 @@ const App = ((() => {
       screen.on('resize', setupCharts)
       intervals.push(setInterval(draw, parseInt(cli['updateInterval'], 10)))
 
-      // @todo Make this look more beautifull
+      // @todo Make this more sexy
       intervals.push(setInterval(charts[0].plugin.poll, charts[0].plugin.interval))
       intervals.push(setInterval(charts[1].plugin.poll, charts[1].plugin.interval))
       intervals.push(setInterval(charts[2].plugin.poll, charts[2].plugin.interval))
