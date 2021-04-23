@@ -38,6 +38,27 @@ var upgrade = (function () {
             }
         },
 
-        
+        install: function(pacakgeName, vars) {
+            var sudo = require('sudo')
+            console.log('')
+            console.log('Installing htop update....')
+            console.log('')
+            console.log(' ** You will need to enter the password to upgrade ** ')
+            console.log('')
+
+            var args = ['npm', 'install', '-g', 'htop']
+            console.log(args.join(' '))
+            
+            
+            var options = {
+                cachePassword: false,
+                prompt: 'Password',
+                spawmOptions: { stdio: 'inherit' }
+            }
+
+            var child = sudo(args, options)
+
+            var path = false
+        }
     }
 })
