@@ -2,7 +2,6 @@
 /**
  * CPU Usage sensor
  *
- * (c) 2014 James Hall
  */
 'use strict'
 
