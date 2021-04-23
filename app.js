@@ -141,6 +141,43 @@ const App = ((() => {
     setInterval(updateLoadAverage, 1000)
   }
 
+  /**
+   * Draw the footer
+   *
+   * @todo This appears to break on some viewports
+   */
+   const drawFooter = () => {
+    const commands = {
+      'dd': 'Kill process',
+      'j': 'Down',
+      'k': 'Up',
+      'g': 'Jump to top',
+      'G': 'Jump to bottom',
+      'c': 'Sort by CPU',
+      'm': 'Sort by Mem'
+    }
+    let text = ''
+    for (const c in commands) {
+      const command = commands[c]
+      text += `  {white-bg}{black-fg}${c}{/black-fg}{/white-bg} ${command}`
+    }
+    text += '{|}http://parall.ax/vtop'
+    const footerRight = blessed.box({
+      width: '100%',
+      top: program.rows - 1,
+      tags: true,
+      fg: loadedTheme.footer.fg
+    })
+    footerRight.setContent(text)
+    screen.append(footerRight)
+  }
+
+  /**
+   * Repeats a string
+   * @var string The string to repeat
+   * @var integer The number of times to repeat
+   * @return {string} The repeated chars as a string.
+   */
 
 })())
 
