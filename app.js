@@ -116,7 +116,7 @@ const App = ((() => {
       content: '',
       tags: true,
       left: Math.floor(program.cols / 2 - (28 / 2))
-    }}
+    })
     screen.append(header)
     screen.append(data)
     screen.append(loadAverage)
