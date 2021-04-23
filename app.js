@@ -161,7 +161,7 @@ const App = ((() => {
       const command = commands[c]
       text += `  {white-bg}{black-fg}${c}{/black-fg}{/white-bg} ${command}`
     }
-    text += '{|}http://parall.ax/ktop'
+    text += '{|}krishpranav.github.io'
     const footerRight = blessed.box({
       width: '100%',
       top: program.rows - 1,
