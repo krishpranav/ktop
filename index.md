@@ -47,3 +47,6 @@ Color Scheme
 ktop --theme wizard
 ktop --theme acid
 ```
+
+Reference
+<img src="https://github.com/krishpranav/ktop/blob/master/ktop.jpg">
