@@ -1,0 +1,34 @@
+{
+	"name": "Brew",
+	"author": "krishpranav",
+	"title": {
+		"fg": "#187dc1"
+	},
+	"chart": {
+		"fg": "#187dc1",
+		"border": {
+			"type": "line",
+			"fg": "#56a0d1"
+		}
+	},
+	"table": {
+		"fg": "fg",
+		"items": {
+			"selected": {
+				"bg": "#56a0d1",
+				"fg": "bg"
+			},
+			"item": {
+				"fg": "fg",
+				"bg": "bg"
+			}
+		},
+		"border": {
+			"type": "line",
+			"fg": "#56a0d1"
+		}
+	},
+	"footer": {
+		"fg": "fg"
+	}
+}
