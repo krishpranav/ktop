@@ -71,6 +71,76 @@ const App = ((() => {
   let processList
   let processListSelection
 
+  // Private functions
+
+  /**
+   * Draw header
+   * @param  {string} left  This is the text to go on the left
+   * @param  {string} right This is the text for the right
+   * @return {void}
+   */
+  const drawHeader = () => {
+    let headerText
+    let headerTextNoTags
+    if (upgradeNotice) {
+      upgradeNotice = `${upgradeNotice}`
+      headerText = ` {bold}vtop{/bold}{white-fg} for ${os.hostname()} {red-bg} Press 'u' to upgrade to v${upgradeNotice} {/red-bg}{/white-fg}`
+      headerTextNoTags = ` vtop for ${os.hostname()}  Press 'u' to upgrade to v${upgradeNotice} `
+    } else {
+      headerText = ` {bold}vtop{/bold}{white-fg} for ${os.hostname()} `
+      headerTextNoTags = ` vtop for ${os.hostname()} `
+    }
+
+    const header = blessed.text({
+      top: 'top',
+      left: 'left',
+      width: headerTextNoTags.length,
+      height: '1',
+      fg: loadedTheme.title.fg,
+      content: headerText,
+      tags: true
+    })
+    const date = blessed.text({
+      top: 'top',
+      right: 0,
+      width: 9,
+      height: '1',
+      align: 'right',
+      content: '',
+      tags: true
+    })
+    const loadAverage = blessed.text({
+      top: 'top',
+      height: '1',
+      align: 'center',
+      content: '',
+      tags: true,
+      left: Math.floor(program.cols / 2 - (28 / 2))
+    })
+    screen.append(header)
+    screen.append(date)
+    screen.append(loadAverage)
+
+    const zeroPad = input => (`0${input}`).slice(-2)
+
+    const updateTime = () => {
+      const time = new Date()
+      date.setContent(`${zeroPad(time.getHours())}:${zeroPad(time.getMinutes())}:${zeroPad(time.getSeconds())} `)
+      screen.render()
+    }
+
+    const updateLoadAverage = () => {
+      const avg = os.loadavg()
+      loadAverage.setContent(`Load Average: ${avg[0].toFixed(2)} ${avg[1].toFixed(2)} ${avg[2].toFixed(2)}`)
+      screen.render()
+    }
+
+    updateTime()
+    updateLoadAverage()
+    setInterval(updateTime, 1000)
+    setInterval(updateLoadAverage, 1000)
+  }
+
 
 })())
 
