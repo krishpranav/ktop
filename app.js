@@ -636,7 +636,7 @@ const App = ((() => {
       screen.on('resize', setupCharts)
       intervals.push(setInterval(draw, parseInt(cli['updateInterval'], 10)))
 
-      // @todo Make this more sexy
+      // @todo Make this look more beautifull
       intervals.push(setInterval(charts[0].plugin.poll, charts[0].plugin.interval))
       intervals.push(setInterval(charts[1].plugin.poll, charts[1].plugin.interval))
       intervals.push(setInterval(charts[2].plugin.poll, charts[2].plugin.interval))
