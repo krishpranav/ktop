@@ -18,7 +18,7 @@
       ]
     },
     "bin": {
-      "vtop": "./bin/vtop.js"
+      "ktop": "./bin/ktop.js"
     },
     "author": {
       "name": "krishpranav",
