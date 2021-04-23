@@ -1,0 +1,34 @@
+{
+	"name": "Dark",
+	"author": "krishpranav",
+	"title": {
+		"fg": "#232323"
+	},
+	"chart": {
+		"fg": "#00A779",
+		"border": {
+			"type": "line",
+			"fg": "#232323"
+		}
+	},
+	"table": {
+		"fg": "#626262",
+		"items": {
+			"selected": {
+				"bg": "#000000",
+				"fg": "#ffffff"
+			},
+			"item": {
+				"bg": "#888888",
+				"fg": "#000000"
+			}
+		},
+		"border": {
+			"type": "line",
+			"fg": "#232323"
+		}
+	},
+	"footer": {
+		"fg": "white"
+	}
+}
