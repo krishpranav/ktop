@@ -1,0 +1,33 @@
+{
+	"name": "Parallax",
+	"author": "krishpranav",
+	"title": {
+		"fg": "#a537fd"	
+	},
+	"chart": {
+		"fg": "#a537fd",
+		"border": {
+			"type": "line",
+			"fg": "#00ebbe"
+		}
+	},
+	"table": {
+		"fg": "fg",
+		"items": {
+			"selected": {
+				"bg": "#a537fd",
+				"fg": "fg"
+			},
+			"item": {
+				"fg": "fg"
+			}
+		},
+		"border": {
+			"type": "line",
+			"fg": "#00ebbe"
+		}
+	},
+	"footer": {
+		"fg": "fg"
+	}
+}
